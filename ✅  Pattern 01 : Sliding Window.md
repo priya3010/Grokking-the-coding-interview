@@ -41,14 +41,14 @@ The efficient way to solve this problem would be to visualize each contiguous su
 
 Here is the algorithm for the <b>Sliding Window</b> approach:
 ````js
-function findAveragesOfSubarrays(arr, k) {
+public List<Double> findAveragesOfSubarrays(arr, k) {
   //sliding window approach
   
-  const results = []
-  let windowSum = 0
-  let windowStart = 0
+  List<Double> results = new ArrayList<>();
+  int windowSum = 0
+  int windowStart = 0
   
-  for(let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+  for(int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
     //add the next element
     windowSum += arr[windowEnd]
     
@@ -58,7 +58,7 @@ function findAveragesOfSubarrays(arr, k) {
     if (windowEnd >= k - 1) {
       //we are **AUTOMATICALLY** returning the window average once we hit the window size of k
       //and pushing to the output array
-      results.push(windowSum/k)
+      results.add(windowSum/k)
       
       //subtracting the element going out
       windowSum -= arr[windowStart]
