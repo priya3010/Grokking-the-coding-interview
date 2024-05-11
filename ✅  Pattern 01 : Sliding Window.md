@@ -14,15 +14,15 @@ A <b>brute-force</b> algorithm will calculate the sum of every 5-element contigu
 
 ````js
 function findAvgOfSubarrays(arr, K) {
-  const results = []
+  List<Integer> results = new ArrayList<>();
   
-  for(let i = 0; i < arr.length - K + 1; i++) {
-    let sum = 0
+  for(int i = 0; i < arr.length - K + 1; i++) {
+    int sum = 0
     
-    for(let j = i; j < i + K; j++) {
+    for(int j = i; j < i + K; j++) {
       sum += arr[j]
     }
-    results.push(sum/K)  
+    results.add(sum/K)  
   }
   return results
 }
